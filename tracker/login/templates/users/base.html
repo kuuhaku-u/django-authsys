@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PP PEE</title>
+    <link rel="icon" href="../cult_project/img/logo_1.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'users/css/main.css '%}" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="menu">
+                <h3 class="logo">Ani<span>Con</span></h3>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="main">
+                <header>
+                    <div class="overlay">
+                        <div class="inner">
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-{{message.tags}}">{{message}}</div>
+                            {% endfor %}
+                            {% endif %}
+                            {% block content %}
+
+
+
+                            {% endblock content %}
+
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="shadow one"></div>
+            <div class="shadow two"></div>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li>
+                    <a href="../cult_project/index.htm" style="--i: 0.05s;">Home</a>
+                </li>
+                <li>
+                    <a href="../cult_project/service.htm" style="--i: 0.1s;">log in</a>
+                </li>
+                <li>
+                    <a href="../cult_project/images.htm" style="--i: 0.15s;">images</a>
+                </li>
+                <li>
+                    <a href="../cult_project/about.htm" style="--i: 0.25s;">About</a>
+                </li>
+                <li>
+                    <a href="../cult_project/contact.htm" style="--i: 0.3s;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{% static 'users/js/app.js'  %}"></script>
+</body>
+
+</html>
